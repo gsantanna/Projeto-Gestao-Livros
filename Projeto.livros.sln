@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto.Presentation", "Projeto.Presentation\Projeto.Presentation.csproj", "{321505B5-675C-4332-9CEC-137A64D6975C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Projeto.livros", "Projeto.livros\Projeto.livros.csproj", "{321505B5-675C-4332-9CEC-137A64D6975C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{8E82F95F-D04C-4BC0-A8ED-776DCFB3488F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{782DBFF0-D4B1-4635-BBC7-380C247A893E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

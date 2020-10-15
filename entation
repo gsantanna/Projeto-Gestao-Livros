@@ -1,0 +1,199 @@
+[1mdiff --git a/Projeto.Presentation.sln b/Projeto.Presentation.sln[m
+[1mdeleted file mode 100644[m
+[1mindex edec999..0000000[m
+[1m--- a/Projeto.Presentation.sln[m
+[1m+++ /dev/null[m
+[36m@@ -1,30 +0,0 @@[m
+[31m-﻿[m
+[31m-Microsoft Visual Studio Solution File, Format Version 12.00[m
+[31m-# Visual Studio Version 16[m
+[31m-VisualStudioVersion = 16.0.30523.141[m
+[31m-MinimumVisualStudioVersion = 10.0.40219.1[m
+[31m-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto.Presentation", "Projeto.Presentation\Projeto.Presentation.csproj", "{321505B5-675C-4332-9CEC-137A64D6975C}"[m
+[31m-EndProject[m
+[31m-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{8E82F95F-D04C-4BC0-A8ED-776DCFB3488F}"[m
+[31m-EndProject[m
+[31m-Global[m
+[31m-	GlobalSection(SolutionConfigurationPlatforms) = preSolution[m
+[31m-		Debug|Any CPU = Debug|Any CPU[m
+[31m-		Release|Any CPU = Release|Any CPU[m
+[31m-	EndGlobalSection[m
+[31m-	GlobalSection(ProjectConfigurationPlatforms) = postSolution[m
+[31m-		{321505B5-675C-4332-9CEC-137A64D6975C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU[m
+[31m-		{321505B5-675C-4332-9CEC-137A64D6975C}.Debug|Any CPU.Build.0 = Debug|Any CPU[m
+[31m-		{321505B5-675C-4332-9CEC-137A64D6975C}.Release|Any CPU.ActiveCfg = Release|Any CPU[m
+[31m-		{321505B5-675C-4332-9CEC-137A64D6975C}.Release|Any CPU.Build.0 = Release|Any CPU[m
+[31m-	EndGlobalSection[m
+[31m-	GlobalSection(SolutionProperties) = preSolution[m
+[31m-		HideSolutionNode = FALSE[m
+[31m-	EndGlobalSection[m
+[31m-	GlobalSection(NestedProjects) = preSolution[m
+[31m-		{321505B5-675C-4332-9CEC-137A64D6975C} = {8E82F95F-D04C-4BC0-A8ED-776DCFB3488F}[m
+[31m-	EndGlobalSection[m
+[31m-	GlobalSection(ExtensibilityGlobals) = postSolution[m
+[31m-		SolutionGuid = {DE8A2453-37F3-4183-A902-F5847FB01EC5}[m
+[31m-	EndGlobalSection[m
+[31m-EndGlobal[m
+[1mdiff --git a/Projeto.Presentation/Controllers/WeatherForecastController.cs b/Projeto.Presentation/Controllers/WeatherForecastController.cs[m
+[1mdeleted file mode 100644[m
+[1mindex 16679e4..0000000[m
+[1m--- a/Projeto.Presentation/Controllers/WeatherForecastController.cs[m
+[1m+++ /dev/null[m
+[36m@@ -1,39 +0,0 @@[m
+[31m-﻿using System;[m
+[31m-using System.Collections.Generic;[m
+[31m-using System.Linq;[m
+[31m-using System.Threading.Tasks;[m
+[31m-using Microsoft.AspNetCore.Mvc;[m
+[31m-using Microsoft.Extensions.Logging;[m
+[31m-[m
+[31m-namespace Projeto.Presentation.Controllers[m
+[31m-{[m
+[31m-    [ApiController][m
+[31m-    [Route("[controller]")][m
+[31m-    public class WeatherForecastController : ControllerBase[m
+[31m-    {[m
+[31m-        private static readonly string[] Summaries = new[][m
+[31m-        {[m
+[31m-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"[m
+[31m-        };[m
+[31m-[m
+[31m-        private readonly ILogger<WeatherForecastController> _logger;[m
+[31m-[m
+[31m-        public WeatherForecastController(ILogger<WeatherForecastController> logger)[m
+[31m-        {[m
+[31m-            _logger = logger;[m
+[31m-        }[m
+[31m-[m
+[31m-        [HttpGet][m
+[31m-        public IEnumerable<WeatherForecast> Get()[m
+[31m-        {[m
+[31m-            var rng = new Random();[m
+[31m-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast[m
+[31m-            {[m
+[31m-                Date = DateTime.Now.AddDays(index),[m
+[31m-                TemperatureC = rng.Next(-20, 55),[m
+[31m-                Summary = Summaries[rng.Next(Summaries.Length)][m
+[31m-            })[m
+[31m-            .ToArray();[m
+[31m-        }[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/Projeto.Presentation/Program.cs b/Projeto.Presentation/Program.cs[m
+[1mdeleted file mode 100644[m
+[1mindex d00f3dc..0000000[m
+[1m--- a/Projeto.Presentation/Program.cs[m
+[1m+++ /dev/null[m
+[36m@@ -1,26 +0,0 @@[m
+[31m-using System;[m
+[31m-using System.Collections.Generic;[m
+[31m-using System.Linq;[m
+[31m-using System.Threading.Tasks;[m
+[31m-using Microsoft.AspNetCore.Hosting;[m
+[31m-using Microsoft.Extensions.Configuration;[m
+[31m-using Microsoft.Extensions.Hosting;[m
+[31m-using Microsoft.Extensions.Logging;[m
+[31m-[m
+[31m-namespace Projeto.Presentation[m
+[31m-{[m
+[31m-    public class Program[m
+[31m-    {[m
+[31m-        public static void Main(string[] args)[m
+[31m-        {[m
+[31m-            CreateHostBuilder(args).Build().Run();[m
+[31m-        }[m
+[31m-[m
+[31m-        public static IHostBuilder CreateHostBuilder(string[] args) =>[m
+[31m-            Host.CreateDefaultBuilder(args)[m
+[31m-                .ConfigureWebHostDefaults(webBuilder =>[m
+[31m-                {[m
+[31m-                    webBuilder.UseStartup<Startup>();[m
+[31m-                });[m
+[31m-    }[m
+[31m-}[m
+[1mdiff --git a/Projeto.Presentation/Projeto.Presentation.csproj b/Projeto.Presentation/Projeto.Presentation.csproj[m
+[1mdeleted file mode 100644[m
+[1mindex d12c450..0000000[m
+[1m--- a/Projeto.Presentation/Projeto.Presentation.csproj[m
+[1m+++ /dev/null[m
+[36m@@ -1,8 +0,0 @@[m
+[31m-<Project Sdk="Microsoft.NET.Sdk.Web">[m
+[31m-[m
+[31m-  <PropertyGroup>[m
+[31m-    <TargetFramework>netcoreapp3.1</TargetFramework>[m
+[31m-  </PropertyGroup>[m
+[31m-[m
+[31m-[m
+[31m-</Project>[m
+[1mdiff --git a/Projeto.Presentation/Properties/launchSettings.json b/Projeto.Presentation/Properties/launchSettings.json[m
+[1mdeleted file mode 100644[m
+[1mindex dc713d2..0000000[m
+[1m--- a/Projeto.Presentation/Properties/launchSettings.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,30 +0,0 @@[m
+[31m-﻿{[m
+[31m-  "$schema": "http://json.schemastore.org/launchsettings.json",[m
+[31m-  "iisSettings": {[m
+[31m-    "windowsAuthentication": false,[m
+[31m-    "anonymousAuthentication": true,[m
+[31m-    "iisExpress": {[m
+[31m-      "applicationUrl": "http://localhost:55157",[m
+[31m-      "sslPort": 0[m
+[31m-    }[m
+[31m-  },[m
+[31m-  "profiles": {[m
+[31m-    "IIS Express": {[m
+[31m-      "commandName": "IISExpress",[m
+[31m-      "launchBrowser": true,[m
+[31m-      "launchUrl": "weatherforecast",[m
+[31m-      "environmentVariables": {[m
+[31m-        "ASPNETCORE_ENVIRONMENT": "Development"[m
+[31m-      }[m
+[31m-    },[m
+[31m-    "Projeto.Presentation": {[m
+[31m-      "commandName": "Project",[m
+[31m-      "launchBrowser": true,[m
+[31m-      "launchUrl": "weatherforecast",[m
+[31m-      "applicationUrl": "http://localhost:5000",[m
+[31m-      "environmentVariables": {[m
+[31m-        "ASPNETCORE_ENVIRONMENT": "Development"[m
+[31m-      }[m
+[31m-    }[m
+[31m-  }[m
+[31m-}[m
+[1mdiff --git a/Projeto.Presentation/Startup.cs b/Projeto.Presentation/Startup.cs[m
+[1mdeleted file mode 100644[m
+[1mindex bf92c78..0000000[m
+[1m--- a/Projeto.Presentation/Startup.cs[m
+[1m+++ /dev/null[m
+[36m@@ -1,48 +0,0 @@[m
+[31m-using System;[m
+[31m-using System.Collections.Generic;[m
+[31m-using System.Linq;[m
+[31m-using System.Threading.Tasks;[m
+[31m-using Microsoft.AspNetCore.Builder;[m
+[31m-using Microsoft.AspNetCore.Hosting;[m
+[31m-using Microsoft.AspNetCore.Mvc;[m
+[31m-using Microsoft.Extensions.Configuration;[m
+[31m-using Microsoft.Extensions.DependencyInjection;[m
+[31m-using Microsoft.Extensions.Hosting;[m
+[31m-using Microsoft.Extensions.Logging;[m
+[31m-[m
+[31m-namespace Projeto.Presentation[m
+[31m-{[m
+[31m-    public class Startup[m
+[31m-    {[m
+[31m-        public Startup(IConfiguration configuration)[m
+[31m-        {[m
+[31m-            Configuration = configuration;[m
+[31m-        }[m
+[31m-[m
+[31m-        public IConfiguration Configuration { get; }[m
+[31m-[m
+[31m-        // This method gets called by the runtime. Use this method to add services to the container.[m
+[31m-        public void ConfigureServices(IServiceCollection services)[m
+[31m-        {[m
+[31m-            services.AddControllers();[m
+[31m-        }[m
+[31m-[m
+[31m-        // This method gets called by the runtime. Use this method to configure the HTT
