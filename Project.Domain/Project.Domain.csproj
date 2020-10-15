@@ -5,18 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Entities\**" />
-    <Compile Remove="Interfaces\**" />
-    <Compile Remove="Services\**" />
-    <Compile Remove="Validations\**" />
-    <EmbeddedResource Remove="Entities\**" />
-    <EmbeddedResource Remove="Interfaces\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <EmbeddedResource Remove="Validations\**" />
-    <None Remove="Entities\**" />
-    <None Remove="Interfaces\**" />
-    <None Remove="Services\**" />
-    <None Remove="Validations\**" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Validations\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
